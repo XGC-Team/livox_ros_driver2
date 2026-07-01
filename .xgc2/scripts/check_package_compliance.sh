@@ -10,7 +10,8 @@ required_files=(
   ".xgc2/scripts/check_package_compliance.sh"
   ".xgc2/scripts/package_debs.sh"
   ".xgc2/scripts/publish_apt_repo.sh"
-  ".github/workflows/build-debs.yml"
+  ".github/workflows/ci.yml"
+  ".github/workflows/release.yml"
   "README.md"
   "CMakeLists.txt"
   "package_ROS1.xml"
@@ -28,5 +29,8 @@ done
 grep -q "id: livox-ros-driver2" "${REPO_ROOT}/.xgc2/product.yml"
 grep -q "ros-noetic-livox-ros-driver2" "${REPO_ROOT}/.xgc2/scripts/package_debs.sh"
 grep -q "install(DIRECTORY config/" "${REPO_ROOT}/CMakeLists.txt"
+grep -q "workflow_dispatch:" "${REPO_ROOT}/.github/workflows/release.yml"
+grep -q "publish_apt:" "${REPO_ROOT}/.github/workflows/release.yml"
+grep -q "publish_apt_repo.sh --deb-dir debs" "${REPO_ROOT}/.github/workflows/release.yml"
 
 echo "Package compliance check passed"
