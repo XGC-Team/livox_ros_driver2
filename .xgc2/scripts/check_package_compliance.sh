@@ -31,6 +31,6 @@ grep -q "ros-noetic-livox-ros-driver2" "${REPO_ROOT}/.xgc2/scripts/package_debs.
 grep -q "install(DIRECTORY config/" "${REPO_ROOT}/CMakeLists.txt"
 grep -q "workflow_dispatch:" "${REPO_ROOT}/.github/workflows/release.yml"
 grep -q "publish_apt:" "${REPO_ROOT}/.github/workflows/release.yml"
-grep -q "publish_apt_repo.sh --deb-dir debs" "${REPO_ROOT}/.github/workflows/release.yml"
+grep -q "publish_apt_repo.sh --deb-dir publish" "${REPO_ROOT}/.github/workflows/release.yml"
 
 echo "Package compliance check passed"
